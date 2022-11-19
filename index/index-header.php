@@ -7,7 +7,7 @@
 </head>
 <body>
     <header>
-        <div><h2>PHP Learning Site</h2></div>
+        <div><h2>PHP Learning Site </h2></div>
     </header>
     
 </body>

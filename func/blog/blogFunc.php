@@ -13,7 +13,7 @@ function getAllPosts($conn) {
 }
 
 function storeBlogPost() {
-    
+    ## sample
 }
 
 ?>
