@@ -1,20 +1,23 @@
 <?php
     include "db.php";
-    include "blog_func.php"
+    include "func/blog/blog_func.php";
 
     session_start();
-    $session_id = session_id();
 
     $title = $_POST["title"];
-    $article = $_POST["article"];
+    $article = $_POST["body"];
     $status = 0;
-    if ($_POST["public-state"]) {
+    if (!empty($_POST["public-state"])) {
         $status = 1;
     }
 
-    storeBlogPost($con, $title, $article, $status);
+    // Insert blog data into the report table
+    $result = storeBlogPost($con, $title, $article, $status);
 
-    echo "<script> location.href='blog.php';</script>";
-
-
+    // Move to a blog list page
+    if ($result) {
+        echo "<script> location.href='blog.php';</script>";
+    } else {
+        echo "<script> location.href='blog_post.php';</script>";
+    }
 ?>

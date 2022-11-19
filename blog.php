@@ -22,9 +22,10 @@
         foreach ($posts as $post):
     ?>
     <div>
-        <h3><?php print $post['title'] ?></h3>
-        <p>Posted by <?php print $post['user_name'] ?></p>
-        <p><?php print $post['created_at'] ?></p>
+        <h3><?php echo $post['report_title'] ?></h3>
+        <div><?php echo $post['report_id'] ?></div>
+        <p>Posted by <?php echo $post['user_name'] ?></p>
+        <p><?php echo $post['report_create_day'] ?></p>
         <a href="blog_detail.php">More details...</a>
     </div>
     <?php 
