@@ -1,6 +1,7 @@
 <?php
 include "db.php";
-include "func/blog/blog_func.php";
+
+session_start();
 
 ?>
 
@@ -17,20 +18,36 @@ include "func/blog/blog_func.php";
 
     <a href="blog.php">Blog</a>
 
-    <div>
-        <div class="title-frame">
-            Title: <br>
-            <input type="text">
+    <form action="blog_post_form.php" method="post">
+        <div>
+            <div class="title-frame">
+                Title: <br>
+                <input 
+                    type="text"
+                    name="title"
+                    cols="30">
+            </div>
+            <div class="body-frame">
+                Article: <br>
+                <textarea
+                    name="body" 
+                    id="body" 
+                    cols="30" 
+                    rows="10">
+                </textarea>
+            </div>
+            <div class="public-state-frame">
+                Public State: 
+                <input 
+                    type="checkbox"
+                    name="public-state" 
+                    id="public-state" 
+                    value="on">
+            </div>
         </div>
-        <div class="body-frame">
-            Article: <br>
-            <textarea name="body" id="body" cols="30" rows="10"></textarea>
-        </div>
-        <div class="public-state-frame">
-            Public State: <input type="checkbox" name="public-state" id="public-state">
-        </div>
-    </div>
-    
+
+        <button type="submit">Post</button>
+    </form>  
     
 </body>
 </html>

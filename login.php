@@ -11,7 +11,7 @@
 
     <form action="login_form.php" method="POST">
         ID      : <input type="text" name="id-form"><br>
-        Password: <input type="text" name="pass-form"><br>
+        Password: <input type="password" name="pass-form"><br>
         <input type="submit" value="Login">
     </form>
     <br>
