@@ -1,6 +1,6 @@
 <?php
 include "db.php";
-include "func/blog/blogFunc.php";
+include "func/blog/blog_func.php";
 
 ?>
 

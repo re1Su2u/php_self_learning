@@ -2,7 +2,7 @@
     session_start();
 
     include "db.php";
-    include "func/blog/blogFunc.php";
+    include "func/blog/blog_func.php";
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -17,7 +17,7 @@
 
     <!-- Articles are showed on this page. -->
 
-    <a href="blog-post.php">Blog Post</a><br>
+    <a href="blog_post.php">Blog Post</a><br>
 
     <?php
         $posts = getAllPosts($con);
