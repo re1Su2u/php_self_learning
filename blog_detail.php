@@ -3,6 +3,8 @@
 
     include "db.php";
     include "func/blog/blog_func.php";
+
+    $report_id = $_POST['report-id']
 ?>
 
 <!DOCTYPE html>

@@ -22,8 +22,8 @@
         foreach ($posts as $post):
     ?>
     <div>
-        <h3><?php echo $post['report_title'] ?></h3>
-        <div><?php echo $post['report_id'] ?></div>
+        <h3 name="title"><?php echo $post['report_title'] ?></h3>
+        <div name="report-id"><?php echo $post['report_id'] ?></div>
         <p>Posted by <?php echo $post['user_name'] ?></p>
         <p><?php echo $post['report_create_day'] ?></p>
         <a href="blog_detail.php">More details...</a>
