@@ -4,7 +4,7 @@
     include "db.php";
     include "func/blog/blog_func.php";
 
-    $report_id = $_POST['report-id']
+    $report_id = $_GET['report_id'];
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +17,18 @@
 </head>
 <body>
     <h3>Blog Page</h3>
+
+    <?php
+        $post = getPostDetail($con, $report_id);
+    ?>
+
+    <div>
+        <h3 name="title"><?php echo $post[0]['report_title'] ?></h3>
+        <div name="report-id">Report No.<?php echo $post[0]['report_id'] ?></div>
+        <p>Posted by <?php echo $post[0]['user_name'] ?></p>
+        <p><?php echo $post[0]['report_create_day'] ?></p>
+        <p><?php echo $post[0]['report_body'] ?></p>
+    </div>
     
 </body>
 </html>

@@ -26,7 +26,7 @@
         <div name="report-id"><?php echo $post['report_id'] ?></div>
         <p>Posted by <?php echo $post['user_name'] ?></p>
         <p><?php echo $post['report_create_day'] ?></p>
-        <a href="blog_detail.php">More details...</a>
+        <a href="blog_detail.php?report_id=<?php echo $post['report_id'] ?>">More details...</a>
     </div>
     <?php 
         endforeach
