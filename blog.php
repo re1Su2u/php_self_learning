@@ -2,7 +2,7 @@
     session_start();
 
     include "db.php";
-    include "func/blog/blogFunc.php";
+    include "func/blog/blog_func.php";
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -14,23 +14,23 @@
 </head>
 <body>
     <h3>Blog Page</h3>
-
     <!-- Articles are showed on this page. -->
-
-    <a href="blog-post.php">Blog Post</a><br>
+    <a href="blog_post.php">Blog Post</a><br>
 
     <?php
         $posts = getAllPosts($con);
-
-        foreach ($posts as $post): ?>
-            <div >
-                <h3><?php print $post['title'] ?></h3>
-                <p>Posted by <?php print $post['id'] ?></p>
-                <p><?php print $post['created_at'] ?></p>
-
-
-            </div>
-    <?php endforeach ?>
+        foreach ($posts as $post):
+    ?>
+    <div>
+        <h3 name="title"><?php echo $post['report_title'] ?></h3>
+        <div name="report-id"><?php echo $post['report_id'] ?></div>
+        <p>Posted by <?php echo $post['user_name'] ?></p>
+        <p><?php echo $post['report_create_day'] ?></p>
+        <a href="blog_detail.php?report_id=<?php echo $post['report_id'] ?>">More details...</a>
+    </div>
+    <?php 
+        endforeach
+    ?>
     
 </body>
 </html>

@@ -13,7 +13,8 @@
     <h2>Top Page</h2>
     <h4>Welcome to php learing site!</h4>
     <?php
-        echo 'User: ' .$_SESSION['id'];
+        echo 'User: ' .$_SESSION['db']['user_name'];
+        echo date('Y/m/d');
     ?> <br>
 
     <a href="inquiry.php">To inquiry page</a><br>
